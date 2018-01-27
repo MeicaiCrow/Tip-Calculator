@@ -10,41 +10,40 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var billAmountField: UITextField!
-    @IBOutlet weak var tipSelector: UISegmentedControl!
+    @IBOutlet weak var tipPercentageLabel: UILabel!
+    @IBOutlet weak var tipSlider: UISlider!
     @IBOutlet weak var roundSwitch: UISwitch!
-    @IBOutlet weak var tipAmountField: UITextField!
+    @IBOutlet weak var roundedTipAmountField: UITextField!
     @IBOutlet weak var totalField: UITextField!
+    @IBOutlet weak var tipAmountField: UITextField!
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        tipPercentageLabel.text = String(format:"%.0f", 100*tipSlider.value)
+    }
     
     @IBAction func calculateTip(_ sender: Any) {
         if let billAmount = Double(billAmountField.text!) {
-            var tipPercentage = 0.0
+            let tipPercentage = Double(tipSlider.value)
             
-            switch tipSelector.selectedSegmentIndex {
-            case 0:
-                tipPercentage = 0.10
-            case 1:
-                tipPercentage = 0.12
-            case 2:
-                tipPercentage = 0.15
-            default:
-                break
-            }
+            let decimalBillAmount = round(100 * billAmount) / 100
+            let tipAmount = decimalBillAmount * tipPercentage
+            let decimalTipAmount = round(100*tipAmount)/100
             
-            let roundedBillAmount = round(100 * billAmount) / 100
-            let tipAmount = roundedBillAmount * tipPercentage
-            let roundedTipAmount = round(100*tipAmount)/100
-            let totalAmount = roundedBillAmount + roundedTipAmount
+            let totalAmount = decimalBillAmount + decimalTipAmount
             
             if (!billAmountField.isEditing) {
-                billAmountField.text = String(format: "%.2f", roundedBillAmount)
+                billAmountField.text = String(format: "%.2f", decimalBillAmount)
             }
             
             if roundSwitch.isOn{
-                let tipAmount = ceil(totalAmount) - roundedBillAmount
+                let roundedTotalAmount = ceil(totalAmount)
+                let roundedTip = roundedTotalAmount - decimalBillAmount
+                
                 tipAmountField.text = String(format: "%.2f", tipAmount)
-                totalField.text = String(format: "%.2f", ceil(totalAmount))
+                roundedTipAmountField.text = String(format:"%.2f", roundedTip)
+                totalField.text = String(format: "%.2f", roundedTotalAmount)
             } else{
-                tipAmountField.text = String(format: "%.2f", roundedTipAmount)
+                tipAmountField.text = String(format: "%.2f", decimalTipAmount)
                 totalField.text = String(format: "%.2f", totalAmount)
             }
             
@@ -60,7 +59,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
