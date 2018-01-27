@@ -45,6 +45,8 @@ class ViewController: UIViewController {
             } else{
                 tipAmountField.text = String(format: "%.2f", decimalTipAmount)
                 totalField.text = String(format: "%.2f", totalAmount)
+                roundedTipAmountField.text = ""
+                roundedTipAmountField.isEnabled = false
             }
             
         } else {
@@ -52,6 +54,7 @@ class ViewController: UIViewController {
             billAmountField.text = ""
             tipAmountField.text = ""
             totalField.text = ""
+            roundedTipAmountField.text = ""
         }
     }
     
