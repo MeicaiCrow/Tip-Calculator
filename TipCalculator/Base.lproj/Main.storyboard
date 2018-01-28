@@ -12,7 +12,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Helvetica.ttc">
-            <string>Helvetica</string>
+            <string>Helvetica-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -24,19 +24,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOCKS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frd-lv-2d7">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frd-lv-2d7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
-                                <color key="backgroundColor" red="0.2118409276008606" green="0.48334598541259766" blue="0.99885183572769165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.2118409276008606" green="0.48334598541259766" blue="0.99885183572769165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="wuU-gi-f3t"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="42"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="aA6-vV-ci4" userLabel="Input Stack View">
-                                <rect key="frame" x="50" y="120" width="275" height="378.5"/>
+                                <rect key="frame" x="50" y="120" width="275" height="398.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb8-Bo-JC6" userLabel="Bill Amount Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
@@ -118,8 +117,11 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcu-nA-5el" userLabel="Calculate">
-                                        <rect key="frame" x="0.0" y="195.5" width="275" height="30"/>
+                                        <rect key="frame" x="0.0" y="195.5" width="275" height="50"/>
                                         <color key="backgroundColor" red="0.21176470588235294" green="0.4823529411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="awW-jz-yOj"/>
+                                        </constraints>
                                         <state key="normal" title="Calculate">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -128,7 +130,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IA-iJ-hfv" userLabel="Tip Amount Stack View">
-                                        <rect key="frame" x="0.0" y="246.5" width="275" height="30"/>
+                                        <rect key="frame" x="0.0" y="266.5" width="275" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiN-7r-41V">
                                                 <rect key="frame" x="0.0" y="0.0" width="185" height="30"/>
@@ -148,7 +150,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qzz-FK-acw" userLabel="Tip Amount Stack View">
-                                        <rect key="frame" x="0.0" y="297.5" width="275" height="30"/>
+                                        <rect key="frame" x="0.0" y="317.5" width="275" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rounded Tip Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiQ-4Y-moV">
                                                 <rect key="frame" x="0.0" y="0.0" width="185" height="30"/>
@@ -168,7 +170,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ZD-dc-LU3" userLabel="Total Stack View">
-                                        <rect key="frame" x="0.0" y="348.5" width="275" height="30"/>
+                                        <rect key="frame" x="0.0" y="368.5" width="275" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxv-ru-HIJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="185" height="30"/>
