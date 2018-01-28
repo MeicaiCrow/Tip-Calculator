@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var billAmountField: UITextField!
+    
     @IBOutlet weak var tipPercentageLabel: UILabel!
     @IBOutlet weak var tipSlider: UISlider!
     @IBOutlet weak var roundSwitch: UISwitch!
-    @IBOutlet weak var roundedTipAmountField: UITextField!
-    @IBOutlet weak var totalField: UITextField!
-    @IBOutlet weak var tipAmountField: UITextField!
+    @IBOutlet weak var tipAmountLabel: UILabel!
+    @IBOutlet weak var roundedPercentageLabel: UILabel!
+    @IBOutlet weak var roundedTipAmountLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         tipPercentageLabel.text = String(format:"%.0f", 100*tipSlider.value)
@@ -23,8 +25,7 @@ class ViewController: UIViewController {
     
     @IBAction func calculateTip(_ sender: Any) {
         if let billAmount = Double(billAmountField.text!) {
-            let tipPercentage = Double(tipSlider.value)
-            
+            let tipPercentage = Double(Double(tipPercentageLabel.text!)!/100.0)
             let decimalBillAmount = round(100 * billAmount) / 100
             let tipAmount = decimalBillAmount * tipPercentage
             let decimalTipAmount = round(100*tipAmount)/100
@@ -39,22 +40,25 @@ class ViewController: UIViewController {
                 let roundedTotalAmount = floor(totalAmount)
                 let roundedTip = roundedTotalAmount - decimalBillAmount
                 
-                tipAmountField.text = String(format: "%.2f", tipAmount)
-                roundedTipAmountField.text = String(format:"%.2f", roundedTip)
-                totalField.text = String(format: "%.2f", roundedTotalAmount)
+                tipAmountLabel.text = String(format: "%.2f", tipAmount)
+                roundedTipAmountLabel.text = String(format:"%.2f", roundedTip)
+                totalLabel.text = String(format: "%.2f", roundedTotalAmount)
+                roundedPercentageLabel.text = String(format:"%.1f%%", 100 * roundedTip/billAmount)
             } else{
-                tipAmountField.text = String(format: "%.2f", decimalTipAmount)
-                totalField.text = String(format: "%.2f", totalAmount)
-                roundedTipAmountField.text = ""
-                roundedTipAmountField.isEnabled = false
+                tipAmountLabel.text = String(format: "%.2f", decimalTipAmount)
+                totalLabel.text = String(format: "%.2f", totalAmount)
+                roundedTipAmountLabel.text = ""
+                roundedPercentageLabel.text = ""
+//                roundedTipAmountLabel.isEnabled = false
             }
             
         } else {
             //show error
             billAmountField.text = ""
-            tipAmountField.text = ""
-            totalField.text = ""
-            roundedTipAmountField.text = ""
+            tipAmountLabel.text = ""
+            totalLabel.text = ""
+            roundedTipAmountLabel.text = ""
+            roundedPercentageLabel.text = ""
         }
     }
     
