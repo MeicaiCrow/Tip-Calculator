@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var billAmountField: UITextField!
     
+    @IBOutlet weak var billAmountField: UITextField!
     @IBOutlet weak var tipPercentageLabel: UILabel!
     @IBOutlet weak var tipSlider: UISlider!
     @IBOutlet weak var roundSwitch: UISwitch!
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
                 totalLabel.text = String(format: "%.2f", totalAmount)
                 roundedTipAmountLabel.text = ""
                 roundedPercentageLabel.text = ""
-//                roundedTipAmountLabel.isEnabled = false
             }
             
         } else {
@@ -69,29 +68,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        setStatusBarBackgroundColor(color: UIColor(red:0.21, green:0.48, blue:1.00, alpha:1.0))
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-//
-//    func setStatusBarBackgroundColor(color : UIColor) {
-//        let statusBarWindow : UIView = UIApplication.shared.value(forKey: "statusBarWindow") as! UIView
-//        let statusBar : UIView = statusBarWindow.value(forKey: "statusBar") as! UIView
-//        /*
-//         if statusBar.responds(to:Selector("setBackgroundColor:")) {
-//         statusBar.backgroundColor = color
-//         }*/
-//        if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
-//            statusBar.backgroundColor = color
-//        }
-//    }
-
 }
 
