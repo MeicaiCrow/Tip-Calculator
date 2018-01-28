@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             }
             
             if roundSwitch.isOn{
-                let roundedTotalAmount = ceil(totalAmount)
+                let roundedTotalAmount = floor(totalAmount)
                 let roundedTip = roundedTotalAmount - decimalBillAmount
                 
                 tipAmountField.text = String(format: "%.2f", tipAmount)
@@ -58,9 +58,14 @@ class ViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        setStatusBarBackgroundColor(color: UIColor(red:0.21, green:0.48, blue:1.00, alpha:1.0))
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,6 +75,18 @@ class ViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    func setStatusBarBackgroundColor(color : UIColor) {
+        let statusBarWindow : UIView = UIApplication.shared.value(forKey: "statusBarWindow") as! UIView
+        let statusBar : UIView = statusBarWindow.value(forKey: "statusBar") as! UIView
+        /*
+         if statusBar.responds(to:Selector("setBackgroundColor:")) {
+         statusBar.backgroundColor = color
+         }*/
+        if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
+            statusBar.backgroundColor = color
+        }
     }
 
 }

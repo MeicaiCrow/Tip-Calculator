@@ -20,13 +20,14 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOCKS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frd-lv-2d7">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOCKS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frd-lv-2d7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="80"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.2118409276008606" green="0.48334598541259766" blue="0.99885183572769165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.2118409276008606" green="0.48334598541259766" blue="0.99885183572769165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="wuU-gi-f3t"/>
                                 </constraints>
@@ -34,8 +35,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="aA6-vV-ci4" userLabel="Input Stack View">
-                                <rect key="frame" x="50" y="144" width="275" height="378.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="aA6-vV-ci4" userLabel="Input Stack View">
+                                <rect key="frame" x="50" y="120" width="275" height="378.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb8-Bo-JC6" userLabel="Bill Amount Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
@@ -53,7 +54,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -93,6 +94,7 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-Pm-ZAd" userLabel="Tip % Horizontal Slider">
                                         <rect key="frame" x="-2" y="92.5" width="279" height="31"/>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="minimumTrackTintColor" red="0.21176470588235294" green="0.4823529411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hvx-ER-pSS"/>
                                         </connections>
@@ -111,13 +113,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="cbd-3y-OTL"/>
                                                 </constraints>
-                                                <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="onTintColor" red="0.21176470588235294" green="0.4823529411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcu-nA-5el" userLabel="Calculate">
                                         <rect key="frame" x="0.0" y="195.5" width="275" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.21176470588235294" green="0.4823529411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Calculate">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -198,17 +200,21 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="frd-lv-2d7" firstAttribute="top" secondItem="AcK-9Y-HhT" secondAttribute="top" id="0cx-Xx-IGU"/>
+                            <constraint firstItem="frd-lv-2d7" firstAttribute="top" secondItem="AcK-9Y-HhT" secondAttribute="top" id="7Aq-cK-ews"/>
                             <constraint firstItem="frd-lv-2d7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="CHu-87-qip"/>
-                            <constraint firstItem="aA6-vV-ci4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hex-As-aM3"/>
+                            <constraint firstItem="aA6-vV-ci4" firstAttribute="centerX" secondItem="AcK-9Y-HhT" secondAttribute="centerX" id="Hex-As-aM3"/>
+                            <constraint firstItem="AcK-9Y-HhT" firstAttribute="leading" secondItem="frd-lv-2d7" secondAttribute="trailing" constant="-375" id="P9f-4b-opj"/>
                             <constraint firstItem="aA6-vV-ci4" firstAttribute="top" secondItem="frd-lv-2d7" secondAttribute="bottom" constant="20" id="QjY-QJ-2K0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aA6-vV-ci4" secondAttribute="trailing" constant="50" id="jm4-Nw-GX4"/>
-                            <constraint firstItem="aA6-vV-ci4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="k64-7u-xEj"/>
-                            <constraint firstItem="frd-lv-2d7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oKL-tz-mMP"/>
+                            <constraint firstItem="frd-lv-2d7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Tgq-6m-FxT"/>
+                            <constraint firstItem="AcK-9Y-HhT" firstAttribute="trailing" secondItem="aA6-vV-ci4" secondAttribute="trailing" constant="50" id="jm4-Nw-GX4"/>
+                            <constraint firstItem="aA6-vV-ci4" firstAttribute="leading" secondItem="AcK-9Y-HhT" secondAttribute="leading" constant="50" id="k64-7u-xEj"/>
+                            <constraint firstItem="frd-lv-2d7" firstAttribute="centerX" secondItem="AcK-9Y-HhT" secondAttribute="centerX" id="oKL-tz-mMP"/>
                             <constraint firstItem="frd-lv-2d7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ujU-FT-mbd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="AcK-9Y-HhT"/>
                     </view>
                     <connections>
                         <outlet property="billAmountField" destination="uQQ-vs-yQ3" id="K1L-ea-Ru5"/>
