@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateTip(_ sender: Any) {
+        self.view.endEditing(false)
         if let billAmount = Double(billAmountField.text!) {
             let tipPercentage = Double(Double(tipPercentageLabel.text!)!/100.0)
             let decimalBillAmount = round(100 * billAmount) / 100
@@ -37,9 +38,14 @@ class ViewController: UIViewController {
             }
             
             if roundSwitch.isOn{
-                let roundedTotalAmount = floor(totalAmount)
-                let roundedTip = roundedTotalAmount - decimalBillAmount
+                var roundedTotalAmount = 0.0
+                if floor(totalAmount) <= billAmount{
+                    roundedTotalAmount = ceil(totalAmount)
+                } else{
+                    roundedTotalAmount = floor(totalAmount)
+                }
                 
+                let roundedTip = roundedTotalAmount - decimalBillAmount
                 tipAmountLabel.text = String(format: "%.2f", tipAmount)
                 roundedTipAmountLabel.text = String(format:"%.2f", roundedTip)
                 totalLabel.text = String(format: "%.2f", roundedTotalAmount)
