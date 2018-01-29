@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateTip(_ sender: Any) {
+        if roundSwitch.isOn {
+            roundedPercentageLabel.isHidden = false
+        } else {
+            roundedPercentageLabel.isHidden = true
+        }
         self.view.endEditing(false)
         if let billAmount = Double(billAmountField.text!) {
             let tipPercentage = Double(Double(tipPercentageLabel.text!)!/100.0)
