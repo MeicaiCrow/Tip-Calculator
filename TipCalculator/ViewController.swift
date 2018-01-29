@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var billAmountField: UITextField!
     @IBOutlet weak var tipPercentageLabel: UILabel!
@@ -24,6 +24,36 @@ class ViewController: UIViewController {
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         tipPercentageLabel.text = String(format:"%.0f", 100*tipSlider.value)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        addDoneButtonOnKeyboard()
+    }
+    
+    func addDoneButtonOnKeyboard() {
+        let doneToolbar = UIToolbar()
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .plain,target: self,action: #selector(doneButtonAction))
+        let clear : UIBarButtonItem = UIBarButtonItem(title: "Clear", style: .plain,target: self,action: #selector(clearButtonAction))
+        var items:[UIBarButtonItem] = []
+        items.append(flexSpace)
+        items.append(clear)
+        items.append(done)
+        
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        self.billAmountField.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction() {
+        self.billAmountField.resignFirstResponder()
+    }
+    
+    @objc func clearButtonAction() {
+        self.billAmountField.text = ""
     }
     
     @IBAction func calculateTip(_ sender: Any) {
@@ -81,9 +111,5 @@ class ViewController: UIViewController {
         self.view.endEditing(false)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 }
 
