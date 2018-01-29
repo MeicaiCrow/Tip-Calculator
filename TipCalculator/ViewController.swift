@@ -19,15 +19,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var roundedTipAmountLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBOutlet weak var roundedStackView: UIStackView!
+    @IBOutlet weak var roundedPercentageStackView: UIStackView!
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         tipPercentageLabel.text = String(format:"%.0f", 100*tipSlider.value)
     }
     
     @IBAction func calculateTip(_ sender: Any) {
         if roundSwitch.isOn {
-            roundedPercentageLabel.isHidden = false
+            roundedStackView.isHidden = false
+            roundedPercentageStackView.isHidden = false
         } else {
-            roundedPercentageLabel.isHidden = true
+            roundedStackView.isHidden = true
+            roundedPercentageStackView.isHidden = true
         }
         self.view.endEditing(false)
         if let billAmount = Double(billAmountField.text!) {
