@@ -181,7 +181,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-9Z-P3s" userLabel="Rounded Tip Percentage Label Stack View">
                                         <rect key="frame" x="175" y="342.5" width="100" height="15"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMD-gu-LEo" userLabel="Rounded Tip Amount % Label">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMD-gu-LEo" userLabel="Rounded Tip Amount % Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="Cku-ZQ-ulB"/>
