@@ -21,6 +21,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var roundedStackView: UIStackView!
     @IBOutlet weak var roundedPercentageStackView: UIStackView!
+    @IBOutlet weak var totalStackView: UILabel!
+    @IBOutlet weak var tipAmountStackView: UIStackView!
     
     @IBAction func sliderChanged(_ sender: UISlider) {
         tipPercentageLabel.text = String(format:"%.0f", 100*tipSlider.value)
@@ -30,6 +32,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         addDoneButtonOnKeyboard()
+        tipAmountStackView.isHidden = true
+        roundedStackView.isHidden = true
+        roundedPercentageStackView.isHidden = true
+        totalStackView.isHidden = true
     }
     
     func addDoneButtonOnKeyboard() {
@@ -57,6 +63,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func calculateTip(_ sender: Any) {
+        tipAmountStackView.isHidden = false
+        totalStackView.isHidden = false
         if roundSwitch.isOn {
             roundedStackView.isHidden = false
             roundedPercentageStackView.isHidden = false

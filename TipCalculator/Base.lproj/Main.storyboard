@@ -247,9 +247,11 @@
                         <outlet property="roundedStackView" destination="Qzz-FK-acw" id="f7E-K1-MMC"/>
                         <outlet property="roundedTipAmountLabel" destination="oOy-NW-s8B" id="PiG-6d-oJh"/>
                         <outlet property="tipAmountLabel" destination="7tP-ZM-3cw" id="8v7-CM-qhc"/>
+                        <outlet property="tipAmountStackView" destination="7IA-iJ-hfv" id="GF1-i2-x83"/>
                         <outlet property="tipPercentageLabel" destination="793-JP-FqU" id="r5Z-Q5-qqZ"/>
                         <outlet property="tipSlider" destination="c2b-Pm-ZAd" id="mZi-8w-tg7"/>
                         <outlet property="totalLabel" destination="4kI-Hd-kVQ" id="rB7-2Z-EAu"/>
+                        <outlet property="totalStackView" destination="Bxv-ru-HIJ" id="noT-kk-Uzm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
